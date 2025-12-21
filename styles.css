@@ -7,6 +7,14 @@ body {
 }
 
 /* Style the nav bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 10px 20px;
+}
+
 nav ul {
   list-style: none;       /* remove bullets */
   margin: 0;
@@ -34,6 +42,13 @@ nav ul li a:hover {
   border-radius: 15px;    /* increase rounding on hover */
 }
 
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 /* Box Transition Effect */
 .box {
   width: 100px;
@@ -46,4 +61,27 @@ nav ul li a:hover {
 .box:hover {
   border-radius: 100%; /* fully round on hover */
   width: 150px;       /* optional size change */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* hide menu */
+    flex-direction: column;
+    gap: 0;
+    background: #f8f8f8;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border: 1px solid #ddd;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
