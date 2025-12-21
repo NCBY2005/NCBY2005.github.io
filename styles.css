@@ -5,3 +5,45 @@ body {
   padding: 0 16px;
   line-height: 1.6;
 }
+
+/* Style the nav bar */
+nav ul {
+  list-style: none;       /* remove bullets */
+  margin: 0;
+  padding: 0;
+  display: flex;          /* horizontal layout */
+  gap: 20px;              /* space between items */
+  justify-content: center; /* center menu */
+  background-color: #f8f8f8; /* optional background */
+}
+
+/* Style links */
+nav ul li a {
+  text-decoration: none;  /* remove underline */
+  color: #333;            /* text color */
+  font-weight: 500;
+  padding: 10px 15px;     /* clickable area */
+  border-radius: 5px;     /* start with rounded corners */
+  transition: background 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+  background-color: #333; /* hover background */
+  color: #fff;            /* hover text color */
+  border-radius: 15px;    /* increase rounding on hover */
+}
+
+/* Box Transition Effect */
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  border-radius: 10px; /* rounded corners */
+  transition: all 0.5s ease; /* animate all properties smoothly */
+}
+
+.box:hover {
+  border-radius: 100%; /* fully round on hover */
+  width: 150px;       /* optional size change */
+}
