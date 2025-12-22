@@ -63,7 +63,21 @@ nav ul li a:hover {
 }
 
 /* Mobile Styles */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+  #menu {
+    display: none;  /* hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #f8f8f8;
+    width: 200px;
+  }
+
+  #menu.show {
+    display: flex;  /* visible when JS toggles 'show' */
+  }
+
   nav ul {
     display: none; /* hide menu */
     flex-direction: column;
