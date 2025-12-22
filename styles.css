@@ -92,7 +92,7 @@ body {
   color: #fff;
   padding: 15px;
   text-decoration: none;
-  transition: opactiy 0.4s ease;
+  transition: 0.3s;
 }
 
 .overlay-content a:hover {
