@@ -6,19 +6,38 @@
   <title>Nicholas Chin Bo You</title>
   <meta name="description" content="Physics and computational science student. Research, software, and quantitative projects.">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet"> <!-- Google Material Icons -->
 </head>
 
 <body>
-
-  <!-- Header -->
+ <!-- 
+   _   _                _           
+  | | | |              | |          
+  | |_| | ___  __ _  __| | ___ _ __ 
+  |  _  |/ _ \/ _` |/ _` |/ _ \ '__|
+  | | | |  __/ (_| | (_| |  __/ |   
+  \_| |_/\___|\__,_|\__,_|\___|_|  -->
+  
   <header>
     <h1>Nicholas Chin Bo You</h1>
     <p>-- A guide to his life and achievements --</p>
   </header>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="hamburger" id="hamburger">&#9776;</div>
+  <!--
+  ___  ___                 
+  |  \/  |                 
+  | .  . | ___ _ __  _   _ 
+  | |\/| |/ _ \ '_ \| | | |
+  | |  | |  __/ | | | |_| |
+  \_|  |_/\___|_| |_|\__,_| -->
+
+  <!-- Hamburger / menu button -->
+  <div class="menu-btn" id="menu-btn">
+    <span class="material-icons-sharp">menu</span>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav">
     <ul id="menu">
       <li><a href="#about">About</a></li>
       <li><a href="#resume">Resume</a></li>
@@ -31,7 +50,34 @@
     </ul>
   </nav>
 
-  <!-- Main Content -->
+  <!-- Mobile Hamburger-->
+  <div class="menu-btn" id="menu-btn">
+    <span class="material-icons-sharp">menu</span>
+  </div>
+  
+  <!-- Full-screen overlay menu for mobile -->
+  <div id="overlay-menu" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" id="close-btn">&times;</a>
+    <div class="overlay-content">
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#research">Research</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#projects">Projects</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- 
+  ___  ___      _         _____             _             _   
+  |  \/  |     (_)       /  __ \           | |           | |  
+  | .  . | __ _ _ _ __   | /  \/ ___  _ __ | |_ ___ _ __ | |_ 
+  | |\/| |/ _` | | '_ \  | |    / _ \| '_ \| __/ _ \ '_ \| __|
+  | |  | | (_| | | | | | | \__/\ (_) | | | | ||  __/ | | | |_ 
+  \_|  |_/\__,_|_|_| |_|  \____/\___/|_| |_|\__\___|_| |_|\__| -->
+  
   <main>
 
     <!-- About -->
@@ -93,15 +139,8 @@
   </footer>
 
 
-  <!-- Javascript for mobile -->
-  <script>
-  const hamburger = document.getElementById('hamburger');
-  const menu = document.getElementById('menu');
-
-  hamburger.addEventListener('click', () => {
-    menu.classList.toggle('show');
-  });
-  </script>
+  <!-- Javascript -->
+  <script src="script.js"></script>
 
 </body>
 </html>

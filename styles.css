@@ -6,46 +6,36 @@ body {
   line-height: 1.6;
 }
 
-/* Style the nav bar */
-nav {
-  display: flex;
+/* Desktop nav */
+.desktop-nav {
   justify-content: space-between;
   align-items: center;
   background: #f8f8f8;
 }
 
-nav ul {
-  list-style: none;       /* remove bullets */
+.desktop-nav ul {
+  list-style: none; /* remove bullets */
+  display: flex;
+  gap: 20px;
+  justify-content: center;
   margin: 0;
-  padding: 0;
-  display: flex;          /* horizontal layout */
-  gap: 20px;              /* space between items */
-  justify-content: center; /* center menu */
-  background-color: #f8f8f8; /* optional background */
+  padding:0;
+  background: #f8f8f8;
 }
 
-/* Style links */
-nav ul li a {
+.desktop-nav ul li a {
   text-decoration: none;  /* remove underline */
-  color: #333;            /* text color */
+  color: #333;          /* text color */
   font-weight: 500;
   padding: 10px 15px;     /* clickable area */
   border-radius: 5px;     /* start with rounded corners */
   transition: background 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
 }
 
-/* Hover effect */
-nav ul li a:hover {
-  background-color: #333; /* hover background */
+.desktop-nav ul li a:hover {
+   background-color: #333; /* hover background */
   color: #fff;            /* hover text color */
   border-radius: 15px;    /* increase rounding on hover */
-}
-
-/* Hamburger */
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
 }
 
 /* Box Transition Effect */
@@ -62,39 +52,72 @@ nav ul li a:hover {
   width: 150px;       /* optional size change */
 }
 
-/* Mobile Styles */
-@media (max-width: 600px) {
-  #menu {
-    display: none;  /* hidden by default */
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #f8f8f8;
-    width: 200px;
-  }
+/* Hamburger button (mobile) */
+.menu-btn {
+  display: none; /* hide on desktop */
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 36px;
+  cursor: pointer;
+  z-index: 1001;
+}
 
-  #menu.show {
-    display: flex;  /* visible when JS toggles 'show' */
-  }
+/* Overlay menu (mobile) */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.95);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
 
-  nav ul {
-    display: none; /* hide menu */
-    flex-direction: column;
-    gap: 0;
-    background: #f8f8f8;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    border: 1px solid #ddd;
-  }
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
 
-  nav ul.show {
-    display: flex;
-  }
+.overlay-content a {
+  display: block;
+  font-size: 28px;
+  color: #fff;
+  padding: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-  .hamburger {
+.overlay-content a:hover {
+  color: #f0a500;
+}
+
+.closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Optional icon spacing */
+.overlay-content a span.material-icons-sharp {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* Responsive: hide desktop nav, show hamburger on mobile */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  .menu-btn {
     display: block;
   }
 }
