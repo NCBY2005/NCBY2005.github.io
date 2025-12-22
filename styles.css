@@ -61,6 +61,8 @@ body {
   font-size: 36px;
   cursor: pointer;
   z-index: 1001;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 /* Overlay menu (mobile) */
