@@ -1,9 +1,46 @@
+header h1 {
+  margin-bottom: 0.15rem;
+}
+
+header p {
+  margin-top: 0;
+}
+
 body {
   font-family: system-ui, sans-serif;
   max-width: 800px;
   margin: 40px auto;
   padding: 0 16px;
   line-height: 1.6;
+}
+
+/* Cormorant font for titles */
+.cormorant-title {
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 60px;
+  font-style: normal;
+}
+
+/* Background canvas */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.25;
+  filter: blur(1px);
+  pointer-events: none;
+  background: black;
+  top: 0;
+  left: 0;
+  width: 100vw;         /* full viewport width */
+  height: 100vh;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
 }
 
 /* Desktop nav */
