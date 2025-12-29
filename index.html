@@ -1,161 +1,300 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicholas Chin Bo You</title>
-  <meta name="description" content="Physics and computational science student. Research, software, and quantitative projects.">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet"> <!-- Google Material Icons -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- For Mobile -->
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Perspective Hero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+    <style>
+        /* Font assignments based on constraints */
+        .font-serif { font-family: 'Cormorant', serif; }
+        .font-mono { font-family: 'Space Mono', monospace; }
+
+        /* Animation Keyframes */
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.98);
+                filter: blur(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes perspective-entry {
+            0% {
+                opacity: 0;
+                transform: perspective(2000px) rotateX(20deg) translateY(100px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: perspective(2000px) rotateX(10deg) translateY(0) scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: perspective(2000px) rotateX(10deg) translateY(0); }
+            50% { transform: perspective(2000px) rotateX(8deg) translateY(-15px); }
+        }
+
+        /* Utility classes for animation sequencing */
+        .animate-sequence-1 { animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; animation-delay: 0.1s; }
+        .animate-sequence-2 { animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; animation-delay: 0.2s; }
+        .animate-sequence-3 { animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; animation-delay: 0.3s; }
+        .animate-sequence-4 { animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; animation-delay: 0.4s; }
+        
+        .perspective-container {
+            animation: perspective-entry 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            animation-delay: 0.5s;
+        }
+
+        .floating-content {
+            animation: float 8s ease-in-out infinite;
+            animation-delay: 1.7s; /* Starts after entry finishes */
+        }
+        
+        /* Custom scrollbar for glass aesthetic */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #171717; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 3px; }
+    </style>
 </head>
+<body class="bg-neutral-900 text-neutral-300 antialiased overflow-x-hidden min-h-screen selection:bg-blue-500/30 selection:text-blue-200">
 
-<body>
- <!-- 
-   _   _                _           
-  | | | |              | |          
-  | |_| | ___  __ _  __| | ___ _ __ 
-  |  _  |/ _ \/ _` |/ _` |/ _ \ '__|
-  | | | |  __/ (_| | (_| |  __/ |   
-  \_| |_/\___|\__,_|\__,_|\___|_|  -->
-  
-  <header>
-    <h1>Nicholas Chin Bo You</h1>
-    <p>-- A guide to his life and achievements --</p>
-  </header>
-
-  <!--
-  ___  ___                 
-  |  \/  |                 
-  | .  . | ___ _ __  _   _ 
-  | |\/| |/ _ \ '_ \| | | |
-  | |  | |  __/ | | | |_| |
-  \_|  |_/\___|_| |_|\__,_| -->
-
-  <!-- Hamburger / menu button -->
-  <div class="menu-btn" id="menu-btn">
-    <span class="material-icons-sharp">menu</span>
-  </div>
-
-  <!-- Desktop Navigation -->
-  <nav class="desktop-nav">
-    <ul id="menu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#leadership">Leadership</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
-      <li><a href="#awards">Awards</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Mobile Hamburger-->
-  <div class="menu-btn" onclick="document.getElementById('overlay-menu').style.width='100%'">
-    <span class="material-icons-sharp">menu</span>
-  </div>
-  
-  <!-- Full-screen overlay menu for mobile -->
-  <div id="overlay-menu" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" id="close-btn">&times;</a>
-    <div class="overlay-content">
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#research">Research</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#projects">Projects</a>
-      <a href="#hobbies">Hobbies</a>
-      <a href="#awards">Awards</a>
-      <a href="#contact">Contact</a>
+    <!-- Background Gradients -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full mix-blend-screen"></div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[600px] h-[400px] bg-neutral-800/40 blur-[100px] rounded-full"></div>
     </div>
-  </div>
 
-  <!-- 
-  ___  ___      _         _____             _             _   
-  |  \/  |     (_)       /  __ \           | |           | |  
-  | .  . | __ _ _ _ __   | /  \/ ___  _ __ | |_ ___ _ __ | |_ 
-  | |\/| |/ _` | | '_ \  | |    / _ \| '_ \| __/ _ \ '_ \| __|
-  | |  | | (_| | | | | | | \__/\ (_) | | | | ||  __/ | | | |_ 
-  \_|  |_/\__,_|_|_| |_|  \____/\___/|_| |_|\__\___|_| |_|\__| -->
-  
-  <main>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-neutral-900/60 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl tracking-tighter text-white font-medium flex items-center gap-2 animate-sequence-1">
+                <span class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500/20 to-neutral-800 flex items-center justify-center border border-white/10">
+                    <span class="font-mono text-xs text-blue-400">A</span>
+                </span>
+                AETHEL
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 font-mono text-xs tracking-wide animate-sequence-1">
+                <a href="#" class="hover:text-white transition-colors">Product</a>
+                <a href="#" class="hover:text-white transition-colors">Methodology</a>
+                <a href="#" class="hover:text-white transition-colors">Pricing</a>
+                <a href="#" class="hover:text-white transition-colors">Manifesto</a>
+            </div>
 
-    <!-- About -->
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        Nicholas Chin Bo You (陈柏佑) (This is a test version)
-      </p>
-    </section>
+            <div class="flex items-center gap-4 animate-sequence-1">
+                <a href="#" class="hidden md:block font-mono text-xs hover:text-white transition-colors">Sign In</a>
+                <button class="font-mono text-xs bg-white/5 hover:bg-white/10 border border-white/10 text-white px-4 py-2 rounded-full transition-all duration-300 backdrop-blur-md group">
+                    Get Access <span class="inline-block transition-transform group-hover:translate-x-1 ml-1">-&gt;</span>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Projects</h2>
+    <!-- Main Hero -->
+    <main class="relative z-10 pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col items-center justify-center min-h-screen">
+        
+        <!-- Typography Section -->
+        <div class="text-center max-w-4xl mx-auto mb-16">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 backdrop-blur-sm mb-8 animate-sequence-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                <span class="font-mono text-xs text-blue-400 tracking-wide uppercase">v2.0 Now Available</span>
+            </div>
 
-      <article>
-        <h3>Stellar Intensity Interferometry (VERITAS)</h3>
-        <p>
-          (Publications under the name N. B. Y. Chin)
-          Research on extracting stellar angular diameters using intensity
-          interferometry. Focus on instrumentation, data pipelines, and
-          independent verification of results.
-        </p>
-      </article>
+            <h1 class="font-serif text-6xl md:text-8xl leading-[0.9] md:leading-[0.85] font-medium text-white tracking-tight mb-8 animate-sequence-3">
+                Financial clarity <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">through precision.</span>
+            </h1>
 
-      <article>
-        <h3>DNS Server in Rust</h3>
-        <p>
-          Implemented a minimal DNS server to understand networking protocols,
-          memory safety, and low-level system behavior.
-        </p>
-      </article>
+            <p class="font-mono text-sm md:text-base text-neutral-400 max-w-lg mx-auto leading-relaxed mb-10 animate-sequence-4">
+                Orchestrate your capital with an operating system designed for the next generation of wealth. Real-time data, liquid assets, and zero friction.
+            </p>
 
-    </section>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-sequence-4">
+                <button class="h-12 px-8 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-bold tracking-wide transition-all shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] flex items-center gap-2">
+                    <iconify-icon icon="lucide:sparkles" width="16" stroke-width="1.5"></iconify-icon>
+                    Start Experience
+                </button>
+                <button class="h-12 px-8 rounded-full bg-transparent border border-neutral-700 hover:border-neutral-500 text-neutral-300 font-mono text-xs tracking-wide transition-all flex items-center gap-2 group">
+                    <iconify-icon icon="lucide:play-circle" width="16" stroke-width="1.5" class="text-neutral-500 group-hover:text-white transition-colors"></iconify-icon>
+                    Watch Sequence
+                </button>
+            </div>
+        </div>
 
-    <!-- Resume -->
-    <section id="resume">
-      <h2>Resume</h2>
-      <p>
-        <a href="assets/resume.pdf" target="_blank">Download PDF</a>
-      </p>
-    </section>
+        <!-- Glass Perspective Visual -->
+        <div class="w-full max-w-5xl mx-auto perspective-container relative h-[500px] md:h-[600px]">
+            <div class="floating-content w-full h-full relative">
+                
+                <!-- Main Glass Card -->
+                <div class="absolute inset-x-0 top-0 h-[500px] rounded-3xl border border-white/10 bg-neutral-900/40 backdrop-blur-xl shadow-2xl overflow-hidden group">
+                    
+                    <!-- Card Header -->
+                    <div class="h-12 border-b border-white/5 flex items-center justify-between px-6 bg-white/[0.02]">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2.5 h-2.5 rounded-full bg-neutral-700/50"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-neutral-700/50"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-neutral-700/50"></div>
+                        </div>
+                        <div class="font-mono text-[10px] text-neutral-500 uppercase tracking-widest">Dashboard // Main</div>
+                        <iconify-icon icon="lucide:layout-grid" class="text-neutral-600" width="14"></iconify-icon>
+                    </div>
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Email: u1552776@umail.com<br>
-        GitHub: <a href="https://github.com/NCBY2005">NCBY2005</a>
-      </p>
-    </section>
+                    <!-- Dashboard Grid -->
+                    <div class="p-6 grid grid-cols-12 gap-6 h-full">
+                        
+                        <!-- Sidebar -->
+                        <div class="col-span-3 hidden md:flex flex-col gap-1 border-r border-white/5 pr-6">
+                            <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-4">
+                                <iconify-icon icon="lucide:activity" width="16"></iconify-icon>
+                                <span class="font-mono text-xs">Overview</span>
+                            </div>
+                            <div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-neutral-500 hover:text-neutral-300 transition-colors cursor-pointer">
+                                <iconify-icon icon="lucide:wallet" width="16"></iconify-icon>
+                                <span class="font-mono text-xs">Assets</span>
+                            </div>
+                            <div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-neutral-500 hover:text-neutral-300 transition-colors cursor-pointer">
+                                <iconify-icon icon="lucide:arrow-right-left" width="16"></iconify-icon>
+                                <span class="font-mono text-xs">Transfers</span>
+                            </div>
+                            <div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-neutral-500 hover:text-neutral-300 transition-colors cursor-pointer">
+                                <iconify-icon icon="lucide:pie-chart" width="16"></iconify-icon>
+                                <span class="font-mono text-xs">Analytics</span>
+                            </div>
+                            
+                            <div class="mt-auto mb-12 p-4 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/5">
+                                <p class="font-serif text-lg text-white mb-1">Upgrade</p>
+                                <p class="font-mono text-[10px] text-neutral-500 mb-3">Unlock pro features today.</p>
+                                <div class="h-1 w-full bg-neutral-800 rounded-full overflow-hidden">
+                                    <div class="h-full w-2/3 bg-blue-500"></div>
+                                </div>
+                            </div>
+                        </div>
 
-  </main>
+                        <!-- Main Content Area -->
+                        <div class="col-span-12 md:col-span-9 flex flex-col gap-6">
+                            
+                            <!-- Stats Row -->
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors group/stat">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <span class="font-mono text-[10px] text-neutral-500 uppercase">Total Balance</span>
+                                        <iconify-icon icon="lucide:trending-up" class="text-blue-500" width="14"></iconify-icon>
+                                    </div>
+                                    <div class="font-serif text-2xl text-white group-hover/stat:text-blue-200 transition-colors">$124,592.00</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <span class="font-mono text-[10px] text-neutral-500 uppercase">Monthly Flow</span>
+                                        <iconify-icon icon="lucide:arrow-down-right" class="text-emerald-500" width="14"></iconify-icon>
+                                    </div>
+                                    <div class="font-serif text-2xl text-white">+$8,240.50</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <span class="font-mono text-[10px] text-neutral-500 uppercase">Yield (APY)</span>
+                                        <iconify-icon icon="lucide:percent" class="text-neutral-500" width="14"></iconify-icon>
+                                    </div>
+                                    <div class="font-serif text-2xl text-white">4.85%</div>
+                                </div>
+                            </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Nicholas Chin Bo You</p>
-  </footer>
+                            <!-- Chart Area (Visual Representation) -->
+                            <div class="flex-1 rounded-xl bg-white/[0.02] border border-white/5 p-6 relative overflow-hidden">
+                                <div class="flex justify-between items-center mb-6">
+                                    <h3 class="font-serif text-xl text-neutral-200">Revenue Performance</h3>
+                                    <div class="flex gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                                        <span class="font-mono text-[10px] text-neutral-500">Current</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Abstract Bar Chart -->
+                                <div class="flex items-end justify-between gap-2 h-32 mt-8 opacity-80">
+                                    <div class="w-full bg-blue-500/20 rounded-t-sm h-[40%] hover:bg-blue-500/40 transition-all duration-500"></div>
+                                    <div class="w-full bg-blue-500/20 rounded-t-sm h-[65%] hover:bg-blue-500/40 transition-all duration-500 delay-75"></div>
+                                    <div class="w-full bg-blue-500/20 rounded-t-sm h-[50%] hover:bg-blue-500/40 transition-all duration-500 delay-100"></div>
+                                    <div class="w-full bg-blue-500/20 rounded-t-sm h-[85%] hover:bg-blue-500/40 transition-all duration-500 delay-150"></div>
+                                    <div class="w-full bg-blue-500/20 rounded-t-sm h-[60%] hover:bg-blue-500/40 transition-all duration-500 delay-200"></div>
+                                    <div class="w-full bg-blue-500/20 rounded-t-sm h-[75%] hover:bg-blue-500/40 transition-all duration-500 delay-300"></div>
+                                    <div class="w-full bg-blue-500/80 rounded-t-sm h-[95%] shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+                                </div>
+                                
+                                <!-- Grid Lines -->
+                                <div class="absolute inset-0 z-[-1] opacity-10" style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 40px 40px;"></div>
+                            </div>
+
+                            <!-- Recent Transaction List -->
+                            <div class="rounded-xl border border-white/5 bg-white/[0.01] p-1">
+                                <div class="flex items-center justify-between p-3 hover:bg-white/5 rounded-lg transition-colors group/item cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center text-white border border-white/10 group-hover/item:border-blue-500/50 transition-colors">
+                                            <iconify-icon icon="lucide:arrow-up-right" width="14"></iconify-icon>
+                                        </div>
+                                        <div>
+                                            <div class="font-mono text-xs text-white">Stripe Inc.</div>
+                                            <div class="font-mono text-[10px] text-neutral-500">Payout</div>
+                                        </div>
+                                    </div>
+                                    <div class="font-mono text-xs text-emerald-400">+$2,400.00</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Elements for Depth -->
+                <div class="absolute -right-12 top-12 w-48 p-4 rounded-xl border border-white/10 bg-neutral-800/60 backdrop-blur-md shadow-2xl transform rotate-y-12 rotate-z-6 animate-pulse" style="animation-duration: 4s;">
+                     <div class="flex items-center gap-3 mb-2">
+                        <div class="p-1.5 rounded-md bg-blue-500/20 text-blue-400">
+                            <iconify-icon icon="lucide:shield-check" width="16"></iconify-icon>
+                        </div>
+                        <span class="font-mono text-[10px] text-blue-200">Verified</span>
+                     </div>
+                     <div class="h-1.5 w-full bg-neutral-700 rounded-full overflow-hidden">
+                         <div class="h-full w-[90%] bg-blue-500"></div>
+                     </div>
+                </div>
+
+                <div class="absolute -left-8 bottom-24 w-40 p-3 rounded-lg border border-white/10 bg-neutral-900/80 backdrop-blur-md shadow-2xl transform -rotate-y-6 -rotate-z-3">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="font-mono text-[10px] text-neutral-400">Server Load</span>
+                        <span class="font-mono text-[10px] text-green-400">98%</span>
+                    </div>
+                     <div class="flex gap-1 h-6 items-end">
+                         <div class="w-1 bg-green-500/50 h-[40%] rounded-sm"></div>
+                         <div class="w-1 bg-green-500/50 h-[60%] rounded-sm"></div>
+                         <div class="w-1 bg-green-500/50 h-[30%] rounded-sm"></div>
+                         <div class="w-1 bg-green-500 h-[80%] rounded-sm shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+                         <div class="w-1 bg-green-500/50 h-[50%] rounded-sm"></div>
+                     </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-white/5 bg-neutral-900 py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2 opacity-50">
+                <div class="w-4 h-4 rounded-full bg-neutral-800 border border-white/10"></div>
+                <span class="font-mono text-[10px] text-neutral-500">© 2024 Aethel Inc.</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="font-mono text-[10px] text-neutral-500 hover:text-white transition-colors">Twitter</a>
+                <a href="#" class="font-mono text-[10px] text-neutral-500 hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="font-mono text-[10px] text-neutral-500 hover:text-white transition-colors">Github</a>
+            </div>
+        </div>
+    </footer>
 
 
-  <!-- Javascript -->
-  <script src="script.js"></script>
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuBtn = document.getElementById("menu-btn");
-    const overlay = document.getElementById("overlay-menu");
-    const closeBtn = document.getElementById("close-btn");
-
-    menuBtn.addEventListener("click", () => {
-      overlay.style.width = "100%";
-    });
-
-    closeBtn.addEventListener("click", () => {
-      overlay.style.width = "0%";
-    });
-  });
-  </script>
-
-
-</body>
-</html>
+</body></html>
