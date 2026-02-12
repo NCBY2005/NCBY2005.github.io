@@ -1,153 +1,297 @@
-header h1 {
-  margin-bottom: 0.15rem;
+/* === Base layout: research-style academic homepage === */
+
+:root {
+  --bg: #f6f5f3;
+  --bg-alt: #ffffff;
+  --text: #1f2933;
+  --text-muted: #5f6b7a;
+  --accent: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --border-subtle: rgba(15, 23, 42, 0.06);
 }
 
-header p {
-  margin-top: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, sans-serif;
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 16px;
-  line-height: 1.6;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: radial-gradient(circle at top left, #e5edff 0, #f6f5f3 42%, #fdfcfb 100%);
 }
 
-/* Background canvas */
-/* #bg-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.25;
-  filter: blur(1px);
-  pointer-events: none;
-  background: white;
-  top: 0;
-  left: 0;
-  width: 100%;         full viewport width
-  height: 100%;
-} */
-
-.content {
-  position: relative;
-  z-index: 1;
+main {
+  max-width: 900px;
+  margin: 3.5rem auto 4rem;
+  padding: 0 1.5rem 0;
 }
 
-/* Desktop nav */
+header {
+  max-width: 900px;
+  margin: 3rem auto 0.5rem;
+  padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+header h1 {
+  margin: 0 0 0.35rem;
+  font-family: "Libre Baskerville", "Times New Roman", serif;
+  font-size: clamp(2.15rem, 4vw, 2.7rem);
+  letter-spacing: 0.02em;
+}
+
+header p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Research-flavored nav */
 .desktop-nav {
-  justify-content: space-between;
-  align-items: center;
-  background: #f8f8f8;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(to bottom, rgba(246, 245, 243, 0.96), rgba(246, 245, 243, 0.9));
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .desktop-nav ul {
-  list-style: none; /* remove bullets */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem 0.35rem;
+  list-style: none;
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin: 0;
-  padding:0;
-  background: #f8f8f8;
+  flex-wrap: wrap;
+  gap: 0.35rem;
 }
 
-.desktop-nav ul li a {
-  text-decoration: none;  /* remove underline */
-  color: #333;          /* text color */
-  font-weight: 500;
-  padding: 10px 15px;     /* clickable area */
-  border-radius: 5px;     /* start with rounded corners */
-  transition: background 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+.desktop-nav li a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
-.desktop-nav ul li a:hover {
-   background-color: #333; /* hover background */
-  color: #fff;            /* hover text color */
-  border-radius: 15px;    /* increase rounding on hover */
+.desktop-nav li a::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  margin-right: 0.45rem;
+  background: rgba(148, 163, 184, 0.7);
 }
 
-/* Box Transition Effect */
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: coral;
-  border-radius: 10px; /* rounded corners */
-  transition: all 0.5s ease; /* animate all properties smoothly */
+.desktop-nav li a:hover,
+.desktop-nav li a:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.08);
+  outline: none;
 }
 
-.box:hover {
-  border-radius: 100%; /* fully round on hover */
-  width: 150px;       /* optional size change */
+.desktop-nav li a:focus-visible {
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.32);
 }
 
-/* Hamburger button (mobile) */
+/* Sections */
+section {
+  margin-top: 2.75rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: 18px;
+  background: var(--bg-alt);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+section:first-of-type {
+  margin-top: 2.25rem;
+}
+
+section h2 {
+  margin: 0 0 0.75rem;
+  font-family: "Libre Baskerville", "Times New Roman", serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #111827;
+}
+
+section h3 {
+  margin: 1.1rem 0 0.35rem;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+section p {
+  margin: 0.35rem 0;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+section p a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+section p a:hover {
+  text-decoration-thickness: 2px;
+}
+
+article + article {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(148, 163, 184, 0.5);
+}
+
+/* Micro-typography helpers */
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+/* Contact + footer */
+footer {
+  max-width: 900px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Vault link */
+body > p a {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+body > p a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Mobile nav overlay */
 .menu-btn {
-  display: none; /* hide on desktop */
   position: fixed;
-  top: 15px;
-  right: 20px;
-  font-size: 36px;
+  inset-inline-end: 1.1rem;
+  inset-block-start: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(246, 245, 243, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  z-index: 1001;
-  pointer-events: auto;
-  touch-action: manipulation;
+  z-index: 20;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
 }
 
-/* Overlay menu (mobile) */
+.menu-btn .material-icons-sharp {
+  font-size: 1.4rem;
+  color: #111827;
+}
+
+.menu-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .overlay {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.95);
-  overflow-x: hidden;
-  transition: 0.5s;
+  z-index: 30;
+  inset: 0;
+  background: radial-gradient(circle at top, #020617 0, #020617 42%, #020617 100%);
+  overflow: hidden;
+  transition: width 0.4s ease;
 }
 
 .overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 26%;
   text-align: center;
-  margin-top: 30px;
 }
 
 .overlay-content a {
   display: block;
-  font-size: 28px;
-  color: #fff;
-  padding: 15px;
+  font-size: 1.3rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 240, 0.85);
+  padding: 0.65rem 0;
   text-decoration: none;
-  transition: 0.3s;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .overlay-content a:hover {
-  color: #f0a500;
+  color: #ffffff;
 }
 
 .closebtn {
   position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
+  inset-inline-end: 2.2rem;
+  inset-block-start: 1.4rem;
+  font-size: 3rem;
   text-decoration: none;
-  color: #fff;
+  color: #e5e7eb;
 }
 
-/* Optional icon spacing */
-.overlay-content a span.material-icons-sharp {
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-/* Responsive: hide desktop nav, show hamburger on mobile */
+/* Responsive tweaks */
 @media (max-width: 768px) {
+  header {
+    margin-top: 3.5rem;
+    padding-top: 3.5rem;
+  }
+
   .desktop-nav {
     display: none;
   }
+
   .menu-btn {
-    display: block;
+    display: inline-flex;
+  }
+
+  section {
+    padding-inline: 1.1rem;
+    margin-top: 2.1rem;
+  }
+
+  main {
+    margin-top: 2.5rem;
   }
 }

@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nicholas Chin Bo You</title>
-  <meta name="description" content="Physics and computational science student. Research, software, and quantitative projects.">
+  <meta name="description"
+    content="Physics and computational science student. Research, software, and quantitative projects.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <!-- Google material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-  <!-- For Mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -23,10 +26,10 @@
   |  _  |/ _ \/ _` |/ _` |/ _ \ '__|
   | | | |  __/ (_| | (_| |  __/ |   
   \_| |_/\___|\__,_|\__,_|\___|_|  -->
-  
+
   <header>
     <h1>Nicholas Chin Bo You</h1>
-    <p>-- A guide to his life and achievements -- (This is a test version)</p>
+    <p>-- A guide to his life and achievements --</p>
   </header>
 
   <!--
@@ -38,29 +41,21 @@
   \_|  |_/\___|_| |_|\__,_| -->
 
   <!-- Hamburger / menu button -->
-  <div class="menu-btn" id="menu-btn">
+  <button class="menu-btn" id="menu-btn" aria-label="Open navigation">
     <span class="material-icons-sharp">menu</span>
-  </div>
+  </button>
 
   <!-- Desktop Navigation -->
-  <nav class="desktop-nav">
+  <nav class="desktop-nav" aria-label="Primary">
     <ul id="menu">
       <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
+      <li><a href="#resume">Curriculum&nbsp;Vitae</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#leadership">Leadership</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
-      <li><a href="#awards">Awards</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Mobile Hamburger-->
-  <div class="menu-btn" onclick="document.getElementById('overlay-menu').style.width='100%'">
-    <span class="material-icons-sharp">menu</span>
-  </div>
-  
   <!-- Full-screen overlay menu for mobile -->
   <div id="overlay-menu" class="overlay">
     <a href="javascript:void(0)" class="closebtn" id="close-btn">&times;</a>
@@ -83,58 +78,79 @@
   | |\/| |/ _` | | '_ \  | |    / _ \| '_ \| __/ _ \ '_ \| __|
   | |  | | (_| | | | | | | \__/\ (_) | | | | ||  __/ | | | |_ 
   \_|  |_/\__,_|_|_| |_|  \____/\___/|_| |_|\__\___|_| |_|\__| -->
-  
+
   <main>
 
     <!-- About -->
     <section id="about">
       <h2>About</h2>
       <p>
-        <strong>Nicholas Chin Bo You (陈柏佑)</strong> -- <em>Nicholas</em> is my English given name, <em>Bo You</em> my Chinese given name and <em>Chin</em> as my family name. 
+        <strong>Nicholas Chin Bo You (陈柏佑)</strong> -- <em>Nicholas</em> is my English given name, <em>Bo You</em> my
+        Chinese given name and <em>Chin</em> as my family name.
         In some contexts, my name may appear as <strong>Nicholas Bo You Chin</strong>.
         <br></br>
-        Born and raised in Malaysia, I graduated from <strong>Foon Yew High School JB</strong>, a Chinese independent high school in Johor Bahru, Malaysia in 2023. 
-        During high school, I was deeply involved in the music scene. 
-        My experiences ranged from performing as young Schubert for "Sing with Schubert!" Musical Drama at HuzzaMusic in 2019, to participating in both local and school orchestras.
-        Beyond performances, I studied luthiery under Steve Ng's tutelage and interned at Goldstone Music Ocean Recording Studio, where I gained foundational skills in music arrangement and audio recording.
+        Born and raised in Malaysia, I graduated from <strong>Foon Yew High School JB</strong>, a Chinese independent
+        high school in Johor Bahru, Malaysia in 2023.
+        During high school, I was deeply involved in the music scene.
+        My experiences ranged from performing as young Schubert for "Sing with Schubert!" Musical Drama at HuzzaMusic in
+        2019, to participating in both local and school orchestras.
+        Beyond performances, I studied luthiery under Steve Ng's tutelage and interned at Goldstone Music Ocean
+        Recording Studio, where I gained foundational skills in music arrangement and audio recording.
         <br></br>
-        I am currently pursuing a <strong>Bachelor of Science in Physics</strong> with emphasis in <strong>Computational Physics and Astronomy</strong>, along with a <strong>minor in Mathematics</strong>, at <strong>University of Utah</strong>. 
-        I am also currently working as an undergraduate research assistant under <strong>Professor Tugdual LeBohec</strong> and <strong>Professor David Kieda</strong>, focusing on analyzing observational data from <strong>Stellar Intensity Interferometry at VERITAS</strong>.
+        I am currently pursuing a <strong>Bachelor of Science in Physics</strong> with emphasis in <strong>Computational
+          Physics and Astronomy</strong>, along with a <strong>minor in Mathematics</strong>, at <strong>University of
+          Utah</strong>.
+        I am also currently working as an undergraduate research assistant under <strong>Professor Tugdual
+          LeBohec</strong> and <strong>Professor David Kieda</strong>, focusing on analyzing observational data from
+        <strong>Stellar Intensity Interferometry at VERITAS</strong>.
         <br></br>
-        In addition to research, I serve as the <strong>Chair of the Undergraduate Student Advisory Council (USAC)</strong> of the Department of Physics & Astronomy at University of Utah.
-        I am also building a SatNOGs-compatible ground station with UCubesat, where I serve as <strong>Chief Financial Officer</strong> and <strong>Ground Station Subsystem Team Lead</strong>.
-        Additionally, I also serve as <strong>Treasurer</strong> for the Fintech Club, making sure we have pizzas for attendees every week.
-        Outside of academics, I still continue to play violin in the Campus Symphony, plays badminton with friends during the weekend and goes rock climbing occasionally.
+        In addition to research, I serve as the <strong>Chair of the Undergraduate Student Advisory Council
+          (USAC)</strong> of the Department of Physics & Astronomy at University of Utah.
+        I am also building a SatNOGs-compatible ground station with UCubesat, where I serve as <strong>Chief Financial
+          Officer</strong> and <strong>Ground Station Subsystem Team Lead</strong>.
+        Additionally, I also serve as <strong>Treasurer</strong> for the Fintech Club, making sure we have pizzas for
+        attendees every week.
+        Outside of academics, I still continue to play violin in the Campus Symphony, plays badminton with friends
+        during the weekend and goes rock climbing occasionally.
         <br>
       </p>
     </section>
 
     <!-- Resume -->
-    <section id="Curriculum Vitae">
+    <section id="resume">
       <h2>Curriculum Vitae</h2>
       <p><a href="cv.pdf" download>Download PDF</a></p>
 
-      <iframe
-        src="cv.pdf"
-        width="100%"
-        height="800px"
-        style="border: none;"
-    ></iframe>
+      <iframe src="cv.pdf" width="100%" height="1100px" style="border: none;"></iframe>
+    </section>
+
+    <!-- research -->
+    <section id="research">
+      <h2>Research</h2>
+
+      <article>
+        <h3>Stellar Intensity Interferometry (VERITAS)</h3>
+        <p>
+          (Publications under the name N. B. Y. Chin) <br>
+          Stellar Intensity Interferometry is an observational technique that exploits second-order coherence properties
+          of starlight to achieve extremely high angular resolution. This method measures correlations in the arrival
+          times of photons collected by telescopes separated by extensive baselines, thereby enabling the resolution of
+          fine astrophysical details even under turbulent atmospheric conditions. Since October 2024, I had been working
+          closely with Professor LeBohec and Professor Kieda on refining data analysis process using CERN ROOT and C++.
+          I analyze data from variable stars such as Beta Canis Majoris, working on capturing its modulation with our
+          instruments.
+          I am also working on writing a convertor script that converts FPGA correlated data into ROOT files to maintain
+          consistency in analysis.
+        </p>
+      </article>
+
     </section>
 
     <!-- Projects -->
     <section id="projects">
       <h2>Projects</h2>
 
-      <article>
-        <h3>Stellar Intensity Interferometry (VERITAS)</h3>
-        <p>
-          (Publications under the name N. B. Y. Chin)
-          Research on extracting stellar angular diameters using intensity
-          interferometry. Focus on instrumentation, data pipelines, and
-          independent verification of results.
-        </p>
-      </article>
+
 
       <article>
         <h3>DNS Server in Rust</h3>
@@ -146,7 +162,7 @@
 
     </section>
 
-    
+
 
     <!-- Contact -->
     <section id="contact">
@@ -161,7 +177,7 @@
 
   <!-- Vault -->
   <p>
-  <a href="vault/index.html">Vault</a>
+    <a href="vault/index.html">Vault</a>
   </p>
 
   <!-- Footer -->
@@ -173,21 +189,22 @@
   <!-- Javascript -->
   <script src="script.js"></script>
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuBtn = document.getElementById("menu-btn");
-    const overlay = document.getElementById("overlay-menu");
-    const closeBtn = document.getElementById("close-btn");
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.getElementById("menu-btn");
+      const overlay = document.getElementById("overlay-menu");
+      const closeBtn = document.getElementById("close-btn");
 
-    menuBtn.addEventListener("click", () => {
-      overlay.style.width = "100%";
-    });
+      menuBtn.addEventListener("click", () => {
+        overlay.style.width = "100%";
+      });
 
-    closeBtn.addEventListener("click", () => {
-      overlay.style.width = "0%";
+      closeBtn.addEventListener("click", () => {
+        overlay.style.width = "0%";
+      });
     });
-  });
   </script>
 
 
 </body>
+
 </html>
