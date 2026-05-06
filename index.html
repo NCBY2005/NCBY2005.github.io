@@ -1,209 +1,347 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicholas Chin Bo You</title>
-  <meta name="description"
-    content="Physics and computational science student. Research, software, and quantitative projects.">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Google material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Nicholas Chin Bo You — Physics | Astronomy | Quantum Information</title>
+    <meta name="description"
+        content="Personal academic portfolio of Nicholas Chin Bo You (陈柏佑) — Physics undergraduate at the University of Utah specializing in Computational Physics, Stellar Intensity Interferometry, Quantum Information, and Quantitative Finance.">
+    <meta name="author" content="Nicholas Chin Bo You">
+    <meta property="og:title" content="Nicholas Chin Bo You — Physics & Research">
+    <meta property="og:description"
+        content="Academic portfolio: Stellar Intensity Interferometry, Quantum Algorithms, Quantitative Finance, and systems projects.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Data -->
+    <script src="data/research.js"></script>
+    <script src="data/projects.js"></script>
+    <script src="data/notes.js"></script>
+    <script src="data/awards.js"></script>
 </head>
 
 <body>
-  <!-- Background canvas -->
-  <!-- <canvas id="bg-canvas"></canvas> -->
 
-  <!-- 
-   _   _                _           
-  | | | |              | |          
-  | |_| | ___  __ _  __| | ___ _ __ 
-  |  _  |/ _ \/ _` |/ _` |/ _ \ '__|
-  | | | |  __/ (_| | (_| |  __/ |   
-  \_| |_/\___|\__,_|\__,_|\___|_|  -->
+    <!-- ══════════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════════ -->
+    <nav id="navbar" role="navigation" aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">N. Chin Bo You</a>
 
-  <header>
-    <h1>Nicholas Chin Bo You</h1>
-    <p>-- A guide to his life and achievements --</p>
-  </header>
+            <ul class="nav-links" role="list">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-  <!--
-  ___  ___                 
-  |  \/  |                 
-  | .  . | ___ _ __  _   _ 
-  | |\/| |/ _ \ '_ \| | | |
-  | |  | |  __/ | | | |_| |
-  \_|  |_/\___|_| |_|\__,_| -->
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle dark/light mode">
+                    <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                    <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                        style="display:none">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                </button>
+                <button id="hamburger" class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Hamburger / menu button -->
-  <button class="menu-btn" id="menu-btn" aria-label="Open navigation">
-    <span class="material-icons-sharp">menu</span>
-  </button>
-
-  <!-- Desktop Navigation -->
-  <nav class="desktop-nav" aria-label="Primary">
-    <ul id="menu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#resume">Curriculum&nbsp;Vitae</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Full-screen overlay menu for mobile -->
-  <div id="overlay-menu" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" id="close-btn">&times;</a>
-    <div class="overlay-content">
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#research">Research</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#projects">Projects</a>
-      <a href="#hobbies">Hobbies</a>
-      <a href="#awards">Awards</a>
-      <a href="#contact">Contact</a>
+    <!-- Mobile overlay menu -->
+    <div id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+        <button id="mobile-close" class="mobile-close" aria-label="Close navigation">✕</button>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
     </div>
-  </div>
 
-  <!-- 
-  ___  ___      _         _____             _             _   
-  |  \/  |     (_)       /  __ \           | |           | |  
-  | .  . | __ _ _ _ __   | /  \/ ___  _ __ | |_ ___ _ __ | |_ 
-  | |\/| |/ _` | | '_ \  | |    / _ \| '_ \| __/ _ \ '_ \| __|
-  | |  | | (_| | | | | | | \__/\ (_) | | | | ||  __/ | | | |_ 
-  \_|  |_/\__,_|_|_| |_|  \____/\___/|_| |_|\__\___|_| |_|\__| -->
 
-  <main>
+    <!-- ══════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════ -->
+    <section id="hero" aria-label="Introduction">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <p class="hero-eyebrow">Physics · Astronomy · Quantum Information · Financial Modeling</p>
+                    <h1 class="hero-name">Nicholas<br>Chin Bo You</h1>
+                    <p class="hero-tagline">陈柏佑 &nbsp;·&nbsp; University of Utah, Computational Physics &amp; Astronomy,
+                        Applied Mathematics</p>
+                    <p class="hero-statement">
+                        Exploring Quantum Computing, Stellar Intensity Interferometry, and
+                        data-driven modeling of complex physical & financial systems.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#research" class="btn btn-primary">View Research</a>
+                        <a href="#projects" class="btn btn-secondary">View Projects</a>
+                        <a href="cv.pdf" class="btn btn-secondary" download>Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+            <span class="scroll-arrow">↓</span>
+            scroll
+        </div>
+    </section>
 
-    <!-- About -->
+
+    <!-- ══════════════════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════════════════ -->
     <section id="about">
-      <h2>About</h2>
-      <p>
-        <strong>Nicholas Chin Bo You (陈柏佑)</strong> -- <em>Nicholas</em> is my English given name, <em>Bo You</em> my
-        Chinese given name and <em>Chin</em> as my family name.
-        In some contexts, my name may appear as <strong>Nicholas Bo You Chin</strong>.
-        <br></br>
-        Born and raised in Malaysia, I graduated from <strong>Foon Yew High School JB</strong>, a Chinese independent
-        high school in Johor Bahru, Malaysia in 2023.
-        During high school, I was deeply involved in the music scene.
-        My experiences ranged from performing as young Schubert for "Sing with Schubert!" Musical Drama at HuzzaMusic in
-        2019, to participating in both local and school orchestras.
-        Beyond performances, I studied luthiery under Steve Ng's tutelage and interned at Goldstone Music Ocean
-        Recording Studio, where I gained foundational skills in music arrangement and audio recording.
-        <br></br>
-        I am currently pursuing a <strong>Bachelor of Science in Physics</strong> with emphasis in <strong>Computational
-          Physics and Astronomy</strong>, along with a <strong>minor in Mathematics</strong>, at <strong>University of
-          Utah</strong>.
-        I am also currently working as an undergraduate research assistant under <strong>Professor Tugdual
-          LeBohec</strong> and <strong>Professor David Kieda</strong>, focusing on analyzing observational data from
-        <strong>Stellar Intensity Interferometry at VERITAS</strong>.
-        <br></br>
-        In addition to research, I serve as the <strong>Chair of the Undergraduate Student Advisory Council
-          (USAC)</strong> of the Department of Physics & Astronomy at University of Utah.
-        I am also building a SatNOGs-compatible ground station with UCubesat, where I serve as <strong>Chief Financial
-          Officer</strong> and <strong>Ground Station Subsystem Team Lead</strong>.
-        Additionally, I also serve as <strong>Treasurer</strong> for the Fintech Club, making sure we have pizzas for
-        attendees every week.
-        Outside of academics, I still continue to play violin in the Campus Symphony, plays badminton with friends
-        during the weekend and goes rock climbing occasionally.
-        <br>
-      </p>
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">About</p>
+                <h2 class="section-title">Background</h2>
+                <p class="section-subtitle">A brief introduction</p>
+            </div>
+
+            <div class="about-body">
+                <p class="about-bio reveal reveal-delay-1">
+                    <strong>Nicholas Chin Bo You (陈柏佑)</strong> — <em>Nicholas</em> is my English given name,
+                    <em>Bo You</em> my Chinese given name, and <em>Chin</em> my family name. Born and raised in
+                    Malaysia,
+                    I graduated from <strong>Foon Yew High School JB</strong> in Johor Bahru in 2023. I am currently
+                    pursuing a <strong>Bachelor of Science in Physics</strong> with an emphasis in
+                    <strong>Computational Physics and Astronomy</strong>, alongside a second major in <strong> Applied
+                        Mathematics</strong>,
+                    at the <strong>University of Utah</strong>.
+                    <br><br>
+                    I work as an <strong>undergraduate research assistant</strong> under
+                    <strong>Prof. Tugdual LeBohec</strong> and <strong>Prof. David Kieda</strong>,
+                    analyzing observational data from Stellar Intensity Interferometry at the VERITAS telescope array.
+                    In addition to research, I serve as the <strong>Chair of the Undergraduate Student Advisory Council
+                        (USAC)</strong> of the Department of Physics & Astronomy at University of Utah.
+                    I am also building a SatNOGs-compatible ground station with UCubesat, where I serve as <strong>Chief
+                        Financial
+                        Officer</strong> and <strong>Ground Station Subsystem Team Lead</strong>.
+                    Additionally, I also serve as <strong>Treasurer</strong> for the Fintech Club, making sure we have
+                    pizzas for attendees every week!
+                    <br><br>
+                    Outside of academics, I play violin in the Campus Symphony, plays badminton with friends during the
+                    weekend, and occasionally go rock climbing.
+                </p>
+
+                <div>
+                    <p class="section-label reveal">Current Focus Areas</p>
+                    <div class="focus-grid">
+                        <div class="focus-card reveal reveal-delay-1">
+                            <h4>Stellar Intensity Interferometry</h4>
+                            <p>Analyzing SII observational data from the VERITAS array to resolve photosphere pulsation
+                                modes of variable stars.</p>
+                        </div>
+                        <div class="focus-card reveal reveal-delay-2">
+                            <h4>Quantum Information &amp; Algorithms</h4>
+                            <p>Studying Efficient Quantum State Preparation, QPIE, and quantum advantage — with an eye
+                                toward
+                                near-term applications on NISQ devices.</p>
+                        </div>
+                        <div class="focus-card reveal reveal-delay-3">
+                            <h4>Quantitative Finance</h4>
+                            <p>Exploring market microstructure, stochastic modelling, and Monte Carlo methods —
+                                connecting ideas from Game Theory to Finance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Resume -->
-    <section id="resume">
-      <h2>Curriculum Vitae</h2>
-      <p><a href="cv.pdf" download>Download PDF</a></p>
 
-      <iframe src="cv.pdf" width="100%" height="1100px" style="border: none;"></iframe>
-    </section>
-
-    <!-- research -->
+    <!-- ══════════════════════════════════════════════════
+       RESEARCH
+  ══════════════════════════════════════════════════ -->
     <section id="research">
-      <h2>Research</h2>
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Research</p>
+                <h2 class="section-title">Academic Work</h2>
+                <p class="section-subtitle">
+                    Publications appear under the name <strong>N. B. Y. Chin</strong>.
+                </p>
+            </div>
 
-      <article>
-        <h3>Stellar Intensity Interferometry (VERITAS)</h3>
-        <p>
-          (Publications under the name N. B. Y. Chin) <br>
-          Stellar Intensity Interferometry is an observational technique that exploits second-order coherence properties
-          of starlight to achieve extremely high angular resolution. This method measures correlations in the arrival
-          times of photons collected by telescopes separated by extensive baselines, thereby enabling the resolution of
-          fine astrophysical details even under turbulent atmospheric conditions. Since October 2024, I had been working
-          closely with Professor LeBohec and Professor Kieda on refining data analysis process using CERN ROOT and C++.
-          I analyze data from variable stars such as Beta Canis Majoris, working on capturing its modulation with our
-          instruments.
-          I am also working on writing a convertor script that converts FPGA correlated data into ROOT files to maintain
-          consistency in analysis.
-        </p>
-      </article>
+            <!-- Filter bar populated by JS -->
+            <div id="research-filter" class="filter-bar" role="group" aria-label="Filter research by tag"></div>
 
+            <!-- Cards populated by JS from data/research.js -->
+            <div id="research-cards" class="cards-grid" aria-live="polite"></div>
+        </div>
     </section>
 
-    <!-- Projects -->
+
+    <!-- ══════════════════════════════════════════════════
+       PROJECTS
+  ══════════════════════════════════════════════════ -->
     <section id="projects">
-      <h2>Projects</h2>
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Projects</p>
+                <h2 class="section-title">Technical Work</h2>
+                <p class="section-subtitle">Writing and Implementation projects spanning Computing, Quantum Computing
+                    and
+                    Quantum Finance.</p>
+            </div>
 
+            <!-- Filter bar populated by JS -->
+            <div id="projects-filter" class="filter-bar" role="group" aria-label="Filter projects by tag"></div>
 
-
-      <article>
-        <h3>DNS Server in Rust</h3>
-        <p>
-          Implemented a minimal DNS server to understand networking protocols,
-          memory safety, and low-level system behavior.
-        </p>
-      </article>
-
+            <!-- Cards populated by JS from data/projects.js -->
+            <div id="projects-cards" class="cards-grid" aria-live="polite"></div>
+        </div>
     </section>
 
 
+    <!-- ══════════════════════════════════════════════════
+       AWARDS & ACHIEVEMENTS
+  ══════════════════════════════════════════════════ -->
+    <section id="awards">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Recognition</p>
+                <h2 class="section-title">Awards &amp; Achievements</h2>
+                <p class="section-subtitle">Selected Honors, Scholarships, and Competitive Distinctions.</p>
+            </div>
 
-    <!-- Contact -->
+            <!-- Cards populated by JS from data/awards.js -->
+            <div id="awards-list" class="awards-list" aria-live="polite"></div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════
+       CURRICULUM VITAE
+  ══════════════════════════════════════════════════ -->
+    <section id="cv">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Curriculum Vitae</p>
+                <h2 class="section-title">CV</h2>
+                <p class="section-subtitle">Education, research experience, skills, and awards.</p>
+            </div>
+
+            <div class="cv-actions reveal reveal-delay-1">
+                <a href="cv.pdf" class="btn btn-primary" download>↓ Download PDF</a>
+                <a href="cv.pdf" class="btn btn-secondary" target="_blank" rel="noopener">↗ Open in New Tab</a>
+            </div>
+
+            <div class="cv-frame-wrapper reveal reveal-delay-2">
+                <iframe src="cv.pdf" title="Nicholas Chin Bo You — Curriculum Vitae" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════════════ -->
     <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Email: u1552776(at)umail(dot)com<br>
-        GitHub: <a href="https://github.com/NCBY2005">NCBY2005</a>
-      </p>
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Contact</p>
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">
+                    I'm always open to conversations about research, collaborations, or opportunities.
+                </p>
+            </div>
+
+            <div class="contact-grid reveal reveal-delay-1">
+
+                <a href="mailto:u1552776@umail.utah.edu" class="contact-item">
+                    <span class="contact-icon">✉</span>
+                    <div>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">u1552776atumaildotutahdotedu</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/NCBY2005" class="contact-item" target="_blank" rel="noopener">
+                    <span class="contact-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57
+                       0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695
+                       -.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99
+                       .105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225
+                       -.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405
+                       c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225
+                       0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3
+                       0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                    </span>
+                    <div>
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">NCBY2005</span>
+                    </div>
+                </a>
+
+                <a href="https://linkedin.com" class="contact-item" target="_blank" rel="noopener">
+                    <span class="contact-icon">in</span>
+                    <div>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">Nicholas Chin Bo You</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
     </section>
 
-  </main>
 
-  <!-- Vault -->
-  <p>
-    <a href="vault/index.html">Vault</a>
-  </p>
+    <!-- ══════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════ -->
+    <footer>
+        <div class="footer-inner">
+            <p class="footer-copy">© 2026 Nicholas Chin Bo You (陈柏佑)</p>
+            <a href="#hero" class="back-top" aria-label="Back to top">↑ Back to top</a>
+        </div>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Nicholas Chin Bo You</p>
-  </footer>
 
-
-  <!-- Javascript -->
-  <script src="script.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuBtn = document.getElementById("menu-btn");
-      const overlay = document.getElementById("overlay-menu");
-      const closeBtn = document.getElementById("close-btn");
-
-      menuBtn.addEventListener("click", () => {
-        overlay.style.width = "100%";
-      });
-
-      closeBtn.addEventListener("click", () => {
-        overlay.style.width = "0%";
-      });
-    });
-  </script>
-
+    <!-- ══════════════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════════════ -->
+    <script src="script.js"></script>
 
 </body>
 
